@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #d4d4d7;
+    }
+
+    .page-container {
+        width: 60vw;
+        margin: auto;
+        padding: 40px 40px;
+        background: #fff;
+    }
+
+    .page-top {
+        display: flex;
+        height: 188px;
+        align-items: center;
+    }
+
+    .page__top__left {
+        margin-right: 36px;
+    }
+
+    .report {
+        border: 15px solid #0a51a1;
+        border-radius: 10px;
+        -webkit-clip-path: polygon(22% 1%, 100% 0, 100% 100%, 0 99%, 0 36%);
+        clip-path: polygon(13% 1%, 100% 0, 100% 100%, 0 99%, 0 103px);
+        position: relative;
+
+    }
+
+    .report::after {
+        content: "";
+        height: 80px;
+        width: 74px;
+        position: absolute;
+        top: -17px;
+        border: 15px solid #0a51a1;
+        border-bottom-right-radius: 11px;
+        right: 87%;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .report-title {
+        font-size: 40px;
+        font-weight: 900;
+        color: #0a51a1;
+        text-transform: uppercase;
+        margin: 12px;
+    }
+
+    .report-title span {
+        border-bottom: 5px solid #0a51a1;
+    }
+
+    code {
+        font-size: 18px;
+    }
+
+    .sub-title {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 0;
+        margin-bottom: 13px;
+        font-size: 24px;
+        letter-spacing: -0.5px;
+    }
+
+    table.report-table {
+        width: 96%;
+        border-collapse: collapse;
+        margin: auto;
+    }
+
+    table.report-table tr:nth-child(2n + 1) {
+        background: #f0f0f0;
+    }
+
+    table.report-table tr td {
+        padding: 6px;
+        font-size: 20px;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+    }
+
+    .report::before {
+        content: "";
+        height: 116px;
+        width: 19px;
+        position: absolute;
+        background: #0a51a1;
+        top: -18px;
+        left: 11px;
+        transform: rotate(32deg);
+    }
+
+    .page-bottom {
+        width: 60%;
+        box-shadow: 11px 13px 7px #ccc;
+        border-radius: 15px;
+    }
+
+    table.table-exp {
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    table.table-exp tr td {
+        font-weight: 600;
+        letter-spacing: -0.5px;
+        color: #666;
+        font-size: 15px;
+    }
+
+    .page-most-bottom h3 {
+        margin-top: 30px;
+        color: #555;
+    }
+
+    .page-image {
+        width: 70%;
+        border: 1px solid #ddd;
+        padding: 5px;
+        border-radius: 2px;
+    }
+
+    .page-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .page-most-bottom ul {
+        flex-wrap: wrap;
+        list-style: none;
+        display: flex;
+    }
+
+    .page-most-bottom ul li img {
+        width: 200px;
+        margin-right: 11px;
+        margin-bottom: 2px;
+        margin-top: 10px;
+        max-height: 157px;
+        height: auto;
+        border: 1px solid #ddd;
+        padding: 3px;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <div class="page-container">
+        <div class="page">
+            <div class="page-top">
+                <div class="page__top__left">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="https://drive4ward.com.bd/public/assets/images/logo/logo2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="page__top__right">
+                    <code>http://test.com</code>
+                    <div style="margin-top: 10px;">
+                        <img src="Screenshot_2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="page-bottom">
+                <div class="report">
+                    <div class="box-shadow"></div>
+                    <h2 class="report-title text-center">
+                        <span>
+                            True Report
+                        </span>
+                    </h2>
+                    <h3 class="sub-title">Report Caption</h3>
+                    <table class="report-table">
+                        <tbody>
+                            <tr>
+				
+                                <td width="15%"><strong>Lot Number:</strong></td>
+                                <td width="15%">{{$true_reports->lot_number}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Auction:</strong></td>
+                                <td width="15%">{{$true_reports->auction}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Auction Date:</strong></td>
+                                <td width="15%">{{$true_reports->auction_date}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Chassis ID:</strong></td>
+                                <td width="15%">{{$true_reports->chassis_ID}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Company:</strong></td>
+                                <td width="15%">{{$true_reports->vendor}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Model:</strong></td>
+                                <td width="15%">{{$true_reports->model}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Mileage:</strong></td>
+                                <td width="15%">{{$true_reports->mileage}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Engine CC:</strong></td>
+                                <td width="15%">{{$true_reports->engine_CC}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Year:</strong></td>
+                                <td width="15%">{{$true_reports->year}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Grade:</strong></td>
+                                <td width="15%">{{$true_reports->grade}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Equipment:</strong></td>
+                                <td width="15%">{{$true_reports->equipment}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Transmission:</strong></td>
+                                <td width="15%">{{$true_reports->transmission}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>AWD:</strong></td>
+                                <td width="15%">{{$true_reports->awd}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Start price:</strong></td>
+                                <td width="15%">{{$true_reports->start_price}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>Finish price:</strong></td>
+                                <td width="15%">{{$true_reports->finish_price}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>color:</strong></td>
+                                <td width="15%">{{$true_reports->color}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>condition:</strong></td>
+                                <td width="15%">{{$true_reports->condition}}</td>
+                            </tr>
+                            <tr>
+                                
+                                <td width="15%"><strong>status:</strong></td>
+                                <td width="15%">{{$true_reports->status}}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chassis:</strong></td>
+                                <td>{{$true_reports->chassis}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="page-most-bottom">
+                <h3>
+                    <u>Auction list explanation</u>
+                </h3>
+                <table class="table-exp">
+                    <tr>
+                        <td style="width:35%">A1 Small Scratch</td>
+                        <td>Need to be replaced</td>
+                    </tr>
+                    <tr>
+                        <td>A2 Scratch</td>
+                        <td>XX Replaced</td>
+                    </tr>
+                    <tr>
+                        <td>A3 Big Scratch</td>
+                        <td>B1 Distortion on (radiator) core support or back panel (approximately size of a thumb)</td>
+                    </tr>
+                    <tr>
+                        <td>A1 Small Scratch</td>
+                        <td>Need to be replaced</td>
+                    </tr>
+                    <tr>
+                        <td>A1 Small Scratch</td>
+                        <td>Need to be replaced</td>
+                    </tr>
+                    <tr>
+                        <td>A1 Small Scratch</td>
+                        <td>Need to be replaced</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="page">
+            <div class="page-top">
+                <div class="page__top__left">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="https://drive4ward.com.bd/public/assets/images/logo/logo2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="page__top__right">
+                    <code>http://test.com</code>
+                    <div style="margin-top: 10px;">
+                        <img src="Screenshot_2.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="page-image">
+                <img src="./Screenshot_3.png" alt="">
+            </div>
+            <div class="page-most-bottom">
+                <ul>
+                    <li>
+                        <img src="./Screenshot_1.png" alt="">
+                    </li>
+                    <li>
+                        <img src="./Screenshot_4.png" alt="">
+                    </li>
+                    <li>
+                        <img src="./Screenshot_5.png" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
